@@ -196,6 +196,7 @@ Understanding the lifecycle of the script will help you determine the best locat
                                          │                     │
                                          ▼                     ▼
                                   [.mp4 Download]        [.webm Stream Capture]
+```
 ### 🔧 Key Contribution Areas
 
 We are actively seeking improvements across the following core functional vectors:
