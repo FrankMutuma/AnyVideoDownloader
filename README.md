@@ -171,3 +171,46 @@ Copy the complete JavaScript block below to your clipboard:
    - If multiple qualities are found, type `1` or `2` to pick the resolution.
    - Confirm or edit the operating-system safe filename when prompted.
 3. **Stream Capture Fallback Mode:** If the video uses blob/MSE protection, look closely at the console logs. Let the video play, and execute `stopRecording()` in your console command line when you wish to finalize and download the captured stream.
+
+## 🤝 Contributing Guide
+
+Thank you for your interest in contributing to **AnyVideoDownloader**! Whether you are optimizing the title parsing selectors or extending support for complex edge cases, your contributions are highly welcome. 
+
+To help maintain standard styling and project velocity, please review our core operational blueprint below before drafting your pull request.
+
+---
+
+### 🗺️ Architecture & Execution Flowchart
+
+Understanding the lifecycle of the script will help you determine the best location to introduce your modifications or optimizations:
+
+```text
+       [Webpage Context]
+              │
+              ▼
+1. Extract Title ──► 2. Scrape Page HTML ──► 3. Branch Quality (High/Low)
+                                                    │
+                                         ┌──────────┴──────────┐
+                                         ▼ (Direct Link)       ▼ (Blob/MSE)
+                                  4. DOM Fetch src       5. MediaRecorder Fallback
+                                         │                     │
+                                         ▼                     ▼
+                                  [.mp4 Download]        [.webm Stream Capture]
+### 🔧 Key Contribution Areas
+
+We are actively seeking improvements across the following core functional vectors:
+
+* **Title Guessing Module (`Step 1`):** Extending DOM lookup parameters to match modern platform patterns (e.g., specific shadow-root structures or modern single-page-app metadata layouts).
+* **Regex Parsing Rules (`Step 2` & `Step 3`):** Updating structural patterns to parse newer inline JSON payload formats embedded in page sources.
+* **Stream Handling Optimization (`Step 5`):** Refining multi-channel container data processing and expanding audio track parsing accuracy within the `MediaRecorder` pipeline.
+
+---
+
+### 🚀 Submission Workflow
+
+To ensure a smooth code review process, follow these basic steps:
+
+1. **Fork the Repository:** Create your own branch from `main` to stage adjustments.
+2. **Apply Local Modifications:** Write clean, vanilla client-side JavaScript. Keep the payload highly compressed if you plan to update the inline bookmarklet logic string.
+3. **Format Layout Elements:** Use the `<kbd>` tag for physical interface commands (e.g., <kbd>Enter</kbd> or <kbd>F12</kbd>) and inline backticks (`` ` ``) for internal script names, methods, or status integers (`1`, `2`).
+4. **Submit a Pull Request:** Detail the nature of your patch, highlight the specific stage in the flowchart it refactors, and provide a test URL where the improvement can be verified.
